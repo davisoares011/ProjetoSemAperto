@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entrar · Sem Aperto</title>
+  <link rel="icon" type="image/png" href="img/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="entrada-pagina">
+
+    <!-- Lado esquerdo: apresentação -->
+    <section class="entrada-lado" aria-hidden="true">
+      <div class="bolha" style="width:320px;height:320px;top:-80px;right:-80px"></div>
+      <div class="bolha" style="width:256px;height:256px;top:33%;left:-64px"></div>
+      <div class="bolha" style="width:192px;height:192px;bottom:80px;right:40px;background:rgba(255,255,255,.08)"></div>
+      <div class="bolha" style="width:384px;height:384px;bottom:-120px;left:33%;background:rgba(43,168,137,.2)"></div>
+      <svg class="grade-fundo" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="grade" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="0.5"/>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#grade)"/>
+      </svg>
+
+      <img class="logo" src="img/logo.png" alt="Sem Aperto">
+
+      <div>
+        <div class="mini-cards">
+          <div class="mini-card"><div class="emoji">💰</div><div class="rotulo">Receitas</div><div class="valor">R$ 7.500</div></div>
+          <div class="mini-card"><div class="emoji">📊</div><div class="rotulo">Despesas</div><div class="valor">R$ 2.650</div></div>
+          <div class="mini-card"><div class="emoji">✅</div><div class="rotulo">Saldo</div><div class="valor">R$ 4.850</div></div>
+        </div>
+        <div class="mini-grafico">
+          <div class="rotulo" id="rotulo-mes">Evolução financeira</div>
+          <svg viewBox="0 0 280 80" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="verdeFundo" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#55B978"/>
+                <stop offset="100%" stop-color="#55B978" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <path d="M0,60 C30,55 60,45 90,40 C120,35 150,30 180,25 C210,20 240,18 280,15 L280,80 L0,80Z" fill="url(#verdeFundo)" opacity="0.2"/>
+            <path d="M0,60 C30,55 60,45 90,40 C120,35 150,30 180,25 C210,20 240,18 280,15" fill="none" stroke="#55B978" stroke-width="2"/>
+            <path d="M0,70 C30,68 60,65 90,60 C120,55 150,62 180,58 C210,54 240,50 280,45" fill="none" stroke="#E85D5D" stroke-width="2" opacity="0.8"/>
+          </svg>
+        </div>
+        <h2>Tenha o controle das suas finanças.</h2>
+        <p>Organize suas receitas, despesas e metas financeiras em um só lugar. Simples, intuitivo e eficiente.</p>
+      </div>
+
+      <div class="rodape">© 2026 Sem Aperto. Todos os direitos reservados.</div>
+    </section>
+
+    <!-- Lado direito: formulário de entrada -->
+    <main class="entrada-form-area">
+      <div style="width:100%;max-width:448px">
+        <img class="logo-mobile" src="img/logo.png" alt="Sem Aperto">
+
+        <div class="cartao-entrada">
+          <h1>Bem-vindo!</h1>
+          <p class="sub">Informe seu usuário e como quer ser chamado.</p>
+
+          <form id="form-entrada" novalidate>
+            <div class="campo">
+              <label for="username">Nome de usuário</label>
+              <div class="entrada-prefixo">
+                <span>@</span>
+                <input class="entrada" type="text" id="username" name="username" placeholder="joao"
+                       autocomplete="username" autocapitalize="none" spellcheck="false" maxlength="40" required>
+              </div>
+              <span class="dica">Sem espaços. Pode usar letras, números, ponto, _ e -.</span>
+            </div>
+
+            <div class="campo">
+              <label for="apelido">Nome ou apelido</label>
+              <input class="entrada" type="text" id="apelido" name="apelido" placeholder="João"
+                     autocomplete="nickname" maxlength="60" required>
+            </div>
+
+            <button type="submit" class="btn btn-primario btn-bloco" id="btn-entrar">Entrar</button>
+          </form>
+
+          <div class="alerta-erro oculto" id="erro" role="alert"></div>
+
+          <p class="rodape-cartao">
+            Primeira vez aqui? É só preencher e entrar,<br>sua conta é criada na hora.
+          </p>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/entrada.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sem Aperto</title>
+  <link rel="icon" type="image/png" href="img/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-pagina="relatorios">
+  <div class="app">
+    <aside class="sidebar" id="sidebar"></aside>
+    <div class="fundo-escuro" id="fundo-escuro"></div>
+    <div class="principal">
+      <header class="topo" id="topo"></header>
+      <main class="conteudo">
+        <div class="cabecalho-pagina">
+          <div>
+            <h2>Relatórios financeiros</h2>
+            <p>Entenda para onde seu dinheiro está indo em <span class="mes-texto"></span>.</p>
+          </div>
+          <div class="acoes">
+            <button type="button" class="btn btn-secundario" id="btn-pdf">
+              <svg class="icone icone-sm" viewBox="0 0 24 24"><path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>Exportar PDF
+            </button>
+            <button type="button" class="btn btn-secundario" id="btn-csv">
+              <svg class="icone icone-sm" viewBox="0 0 24 24"><path d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>Exportar CSV
+            </button>
+          </div>
+        </div>
+
+        <div class="grade-4" id="cards-relatorio"></div>
+
+        <div class="grade-2">
+          <div class="cartao cartao-corpo">
+            <h3>Receitas × Despesas</h3>
+            <p class="sub" style="margin-bottom:20px">Últimos 6 meses</p>
+            <div id="grafico-barras"></div>
+            <div class="legenda" style="justify-content:center;margin-top:8px">
+              <span><i class="bola" style="background:#2BA889"></i>Receitas</span>
+              <span><i class="bola" style="background:#E85D5D"></i>Despesas</span>
+            </div>
+          </div>
+
+          <div class="cartao cartao-corpo">
+            <h3>Despesas por categoria</h3>
+            <p class="sub mes-texto" style="margin-bottom:20px"></p>
+            <div class="pizza-lado">
+              <div id="grafico-rosca"></div>
+              <div class="barras-pct" id="barras-pct"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cartao cartao-corpo">
+          <h3>Evolução do saldo</h3>
+          <p class="sub" style="margin-bottom:20px">Últimos 6 meses</p>
+          <div id="grafico-saldo"></div>
+        </div>
+
+        <div class="cartao">
+          <div class="cartao-cabecalho"><h3>Resumo financeiro</h3></div>
+          <div class="cartao-corpo">
+            <div class="grade-3" id="resumo-final"></div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/graficos.js"></script>
+  <script src="js/relatorios.js"></script>
+</body>
+</html>

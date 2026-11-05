@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sem Aperto</title>
+  <link rel="icon" type="image/png" href="img/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-pagina="historico">
+  <div class="app">
+    <aside class="sidebar" id="sidebar"></aside>
+    <div class="fundo-escuro" id="fundo-escuro"></div>
+    <div class="principal">
+      <header class="topo" id="topo"></header>
+      <main class="conteudo">
+        <div class="cabecalho-pagina">
+          <div>
+            <h2>Histórico de movimentações</h2>
+            <p>Consulte todas as suas receitas e despesas.</p>
+          </div>
+        </div>
+
+        <div class="cartao cartao-corpo">
+          <div class="filtros">
+            <div class="campo">
+              <label class="rotulo-sm" for="busca">Buscar</label>
+              <div class="entrada-prefixo">
+                <svg class="icone icone-sm" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                <input class="entrada" id="busca" placeholder="Descrição ou categoria...">
+              </div>
+            </div>
+            <div class="campo">
+              <label class="rotulo-sm" for="filtro-tipo">Tipo</label>
+              <select class="entrada" id="filtro-tipo">
+                <option value="">Todos</option>
+                <option value="RECEITA">Receita</option>
+                <option value="DESPESA">Despesa</option>
+              </select>
+            </div>
+            <div class="campo">
+              <label class="rotulo-sm" for="filtro-categoria">Categoria</label>
+              <select class="entrada" id="filtro-categoria"><option value="">Todas</option></select>
+            </div>
+            <div class="campo">
+              <label class="rotulo-sm" for="filtro-periodo">Período</label>
+              <select class="entrada" id="filtro-periodo">
+                <option value="mes">Mês selecionado no topo</option>
+                <option value="todos">Todos os meses</option>
+              </select>
+            </div>
+          </div>
+          <div class="acoes">
+            <button type="button" class="btn btn-secundario" id="btn-limpar">Limpar filtros</button>
+          </div>
+        </div>
+
+        <div class="cartao" style="overflow:hidden">
+          <div class="tabela-caixa">
+            <table>
+              <thead>
+                <tr>
+                  <th>Data</th><th>Descrição</th><th class="esconder-celular">Categoria</th>
+                  <th class="esconder-celular">Tipo</th><th>Valor</th><th>Ações</th>
+                </tr>
+              </thead>
+              <tbody id="linhas"></tbody>
+            </table>
+          </div>
+          <div class="paginacao oculto" id="paginacao"></div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/historico.js"></script>
+</body>
+</html>

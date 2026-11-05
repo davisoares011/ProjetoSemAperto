@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sem Aperto</title>
+  <link rel="icon" type="image/png" href="img/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-pagina="dashboard">
+  <div class="app">
+    <aside class="sidebar" id="sidebar"></aside>
+    <div class="fundo-escuro" id="fundo-escuro"></div>
+    <div class="principal">
+      <header class="topo" id="topo"></header>
+      <main class="conteudo">
+        <div class="cabecalho-pagina">
+          <div>
+            <h2 id="saudacao">Olá! 👋</h2>
+            <p>Acompanhe sua vida financeira.</p>
+          </div>
+        </div>
+
+        <div class="grade-4" id="cards"></div>
+
+        <div class="grade-graficos">
+          <div class="cartao cartao-corpo">
+            <div class="cabecalho-pagina" style="margin-bottom:20px">
+              <div>
+                <h3>Evolução financeira</h3>
+                <p class="sub mes-texto"></p>
+              </div>
+              <div class="legenda">
+                <span><i style="background:#2BA889"></i>Receitas</span>
+                <span><i style="background:#E85D5D"></i>Despesas</span>
+                <span><i style="background:#1675A5"></i>Saldo</span>
+              </div>
+            </div>
+            <div id="grafico-evolucao"></div>
+          </div>
+
+          <div class="cartao cartao-corpo">
+            <h3>Despesas por categoria</h3>
+            <p class="sub mes-texto" style="margin-bottom:20px"></p>
+            <div id="grafico-categorias"></div>
+            <div class="lista-pizza" id="lista-categorias"></div>
+          </div>
+        </div>
+
+        <div class="cartao">
+          <div class="cartao-cabecalho">
+            <h3>Últimas movimentações</h3>
+            <a href="historico.html" class="btn-link">Ver todas →</a>
+          </div>
+          <div class="lista" id="ultimas"></div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/graficos.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
