@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sem Aperto</title>
+  <link rel="icon" type="image/png" href="img/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-pagina="movimentacoes">
+  <div class="app">
+    <aside class="sidebar" id="sidebar"></aside>
+    <div class="fundo-escuro" id="fundo-escuro"></div>
+    <div class="principal">
+      <header class="topo" id="topo"></header>
+      <main class="conteudo">
+        <div class="cabecalho-pagina">
+          <div>
+            <h2 id="titulo-form">Movimentações</h2>
+            <p>Cadastre suas receitas e despesas.</p>
+          </div>
+        </div>
+
+        <div class="grade-mov">
+          <div class="cartao" style="overflow:hidden">
+            <div class="abas" role="tablist">
+              <button type="button" class="aba receita" data-tipo="RECEITA" role="tab">
+                <svg class="icone icone-sm" viewBox="0 0 24 24"><path d="M7 11l5-5m0 0l5 5m-5-5v12"/></svg>Receita
+              </button>
+              <button type="button" class="aba despesa ativa" data-tipo="DESPESA" role="tab">
+                <svg class="icone icone-sm" viewBox="0 0 24 24"><path d="M17 13l-5 5m0 0l-5-5m5 5V6"/></svg>Despesa
+              </button>
+            </div>
+
+            <form class="form-mov" id="form-mov">
+              <div class="aviso-edicao oculto" id="aviso-edicao">Você está editando uma movimentação já cadastrada.</div>
+
+              <div class="grade-form">
+                <div class="campo inteiro">
+                  <label for="descricao">Descrição</label>
+                  <input class="entrada" id="descricao" maxlength="140" required placeholder="Ex: Supermercado, luz...">
+                </div>
+                <div class="campo">
+                  <label for="valor">Valor</label>
+                  <div class="entrada-prefixo">
+                    <span>R$</span>
+                    <input class="entrada" id="valor" type="number" min="0.01" step="0.01" required placeholder="0,00">
+                  </div>
+                </div>
+                <div class="campo">
+                  <label for="data">Data</label>
+                  <input class="entrada" id="data" type="date" required>
+                </div>
+                <div class="campo">
+                  <label for="categoria">Categoria</label>
+                  <select class="entrada" id="categoria" required></select>
+                </div>
+                <div class="campo">
+                  <label for="conta">Conta</label>
+                  <select class="entrada" id="conta">
+                    <option>Conta corrente</option>
+                    <option>Conta poupança</option>
+                    <option>Cartão de crédito</option>
+                    <option>Carteira</option>
+                  </select>
+                </div>
+                <div class="campo inteiro">
+                  <label for="observacao">Observação</label>
+                  <textarea class="entrada" id="observacao" rows="2" maxlength="500" placeholder="Observações adicionais..."></textarea>
+                </div>
+              </div>
+
+              <div class="linha-toggle">
+                <button type="button" class="toggle" id="toggle-recorrente" role="switch" aria-checked="false" aria-label="Movimentação recorrente"></button>
+                <span>Movimentação recorrente</span>
+              </div>
+
+              <div class="campo oculto" id="bloco-frequencia">
+                <label>Frequência</label>
+                <div class="chips" id="chips-frequencia">
+                  <button type="button" class="chip" data-freq="SEMANAL">Semanal</button>
+                  <button type="button" class="chip ativo" data-freq="MENSAL">Mensal</button>
+                  <button type="button" class="chip" data-freq="ANUAL">Anual</button>
+                </div>
+              </div>
+
+              <div class="botoes-form">
+                <button type="button" class="btn btn-secundario" id="btn-cancelar">Cancelar</button>
+                <button type="submit" class="btn btn-primario" id="btn-salvar">Salvar movimentação</button>
+              </div>
+              <div class="alerta-erro oculto" id="erro" role="alert" style="margin-top:0"></div>
+            </form>
+          </div>
+
+          <div class="cartao">
+            <div class="cartao-cabecalho">
+              <div>
+                <h3>Movimentações recorrentes</h3>
+                <p class="sub" id="qtd-recorrentes"></p>
+              </div>
+            </div>
+            <div class="lista" id="recorrentes"></div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/movimentacoes.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sem Aperto</title>
+  <link rel="icon" type="image/png" href="img/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-pagina="categorias">
+  <div class="app">
+    <aside class="sidebar" id="sidebar"></aside>
+    <div class="fundo-escuro" id="fundo-escuro"></div>
+    <div class="principal">
+      <header class="topo" id="topo"></header>
+      <main class="conteudo">
+        <div class="cabecalho-pagina">
+          <div>
+            <h2>Categorias</h2>
+            <p>Organize suas movimentações.</p>
+          </div>
+          <button type="button" class="btn btn-primario" id="btn-nova">
+            <svg class="icone icone-sm" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>Nova categoria
+          </button>
+        </div>
+
+        <div class="filtro-abas" id="filtro-tipo">
+          <button type="button" class="ativo" data-tipo="">Todos</button>
+          <button type="button" data-tipo="RECEITA">Receita</button>
+          <button type="button" data-tipo="DESPESA">Despesa</button>
+        </div>
+
+        <div class="grade-4" id="grade-categorias"></div>
+      </main>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/categorias.js"></script>
+</body>
+</html>

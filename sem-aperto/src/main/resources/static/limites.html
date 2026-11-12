@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sem Aperto</title>
+  <link rel="icon" type="image/png" href="img/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-pagina="limites">
+  <div class="app">
+    <aside class="sidebar" id="sidebar"></aside>
+    <div class="fundo-escuro" id="fundo-escuro"></div>
+    <div class="principal">
+      <header class="topo" id="topo"></header>
+      <main class="conteudo">
+        <div class="cabecalho-pagina">
+          <div>
+            <h2>Limites de gastos</h2>
+            <p>Defina quanto você deseja gastar em <span id="mes-nome"></span>.</p>
+          </div>
+          <button type="button" class="btn btn-primario" id="btn-definir">
+            <svg class="icone icone-sm" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>Definir limite
+          </button>
+        </div>
+
+        <div class="grade-3" id="cards-limite"></div>
+
+        <div class="cartao cartao-corpo">
+          <div class="cabecalho-pagina" style="margin-bottom:12px;align-items:center">
+            <div><strong>Utilização geral</strong> <span class="cinza" style="font-size:12px;margin-left:8px" id="uso-texto"></span></div>
+            <strong id="uso-pct"></strong>
+          </div>
+          <div class="barra grossa"><div id="uso-barra" style="width:0"></div></div>
+        </div>
+
+        <div class="cartao">
+          <div class="cartao-cabecalho"><h3>Por categoria</h3></div>
+          <div class="lista" id="lista-limites"></div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/limites.js"></script>
+</body>
+</html>
